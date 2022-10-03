@@ -1,1 +1,1 @@
-# Checkpoint-3
+# Checkpoint-3 - Tienda de Libros Virtual

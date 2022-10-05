@@ -45,7 +45,7 @@ function BookForm() {
   }, [params, books]);
 
   return (
-    <form onSubmit={handleSubmit} className="bg-zinc-800 max-w-sm p-4">
+    <form onSubmit={handleSubmit} className="bg-slate-400 max-w-sm p-4 mt-4">
       <label className="block text-sm font-bold">Book:</label>
       <input
         type="text"
@@ -62,18 +62,18 @@ function BookForm() {
         name="author"
         onChange={handleChange}
         value={book.author}
-        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
+        className="w-full p-2 rounded-md bg-zinc-700 mb-2"
         placeholder="Write a auhtor"
        
       />
-      <label>
+      <label >
         Description:
         <textarea
           type="text"
           name="description"
           onChange={handleChange}
           value={book.description}
-          className="w-full p-2 rounded-md bg-zinc-600 mb-2"
+          className="w-full p-2 rounded-md bg-zinc-700 mb-2"
           placeholder="Write a description"
         />
       </label>

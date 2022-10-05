@@ -6,7 +6,7 @@ import NavBar from "./components/NavBar";
 
 function App() {
   return (
-    <div className="bg-zinc-900 h-screen text-white">
+    <div className="bg-zinc-600  h-screen text-white">
       <NavBar />
       <div className="flex items-center justify-center">
         <BrowserRouter>

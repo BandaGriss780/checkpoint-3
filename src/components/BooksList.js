@@ -53,46 +53,12 @@ function BooksList() {
                 </button>
               </div>
               <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
-               View more
+                View more
               </button>
             </div>
           </div>
         ))}
       </div>
-      {/* <div className="flex flex-wrap justify-center space-x-3.5 ">
-        {books.map((book) => (
-          <div class="flex flex-col justify-center md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-            <img
-              className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg"
-              src="https://3.bp.blogspot.com/-B-fvBh56lpI/UHC5X70tjrI/AAAAAAAAXT0/ObVodIHL73Y/s1600/libros1.jpg"
-              alt=""
-            />
-            <div
-              className="bg-slate-400 p-4 rounded-md space-y-3.5"
-              key={book.id}
-            >
-              <h3 className="text-lg font-bold">{book.title}</h3>
-
-              <p>Description: {book.description}</p>
-              <p>Author: {book.author}</p>
-              <div className="flex gap-x-2">
-                <Link
-                  to={`/edit-book/${book.id}`}
-                  className="bg-zinc-600 px-2 py-1 text-xs rounded-md self-center"
-                >
-                  Edit
-                </Link>
-                <button
-                  onClick={() => handleDelete(book.id)}
-                  className="bg-red-500 px-2 py-1 text-xs rounded-md"
-                >
-                  Delete
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div> */}
     </div>
   );
 }

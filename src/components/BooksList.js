@@ -31,7 +31,7 @@ function BooksList() {
             <img
               className="object-cover w-full h-48"
               src="https://3.bp.blogspot.com/-B-fvBh56lpI/UHC5X70tjrI/AAAAAAAAXT0/ObVodIHL73Y/s1600/libros1.jpg"
-              alt="image"
+              alt="imagen libros"
             />
             <div className="bg-slate-400 p-4  space-y-3.5">
               <h3 className="text-lg font-bold">{book.title}</h3>

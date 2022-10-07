@@ -1,35 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import data from "../listaDeLibros.json"
 
-const initialState = [
-  {
-    id: "1",
-    title: "Harry potter",
-    completed: false,
-    author: "Fabi",
-    description: "This is a book",
-  },
-  {
-    id: "2",
-    title: "Lord of the rings",
-    completed: false,
-    author: "Pablo",
-    description: "This is a book",
-  },
-  {
-    id: "3",
-    title: "Harry potter second",
-    completed: false,
-    author: "Fabi",
-    description: "This is a book",
-  },
-  {
-    id: "4",
-    title: "Lord of the rings 2012",
-    completed: false,
-    author: "Marta Gomez",
-    description: "This is a book",
-  },
-];
+const initialState = [...data]
 
 const userSlice = createSlice({
   name: "books",

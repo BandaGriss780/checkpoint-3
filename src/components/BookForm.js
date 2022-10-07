@@ -8,6 +8,7 @@ function BookForm() {
   const [book, setBook] = useState({
     title: "",
     description: "",
+    author: ""
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();

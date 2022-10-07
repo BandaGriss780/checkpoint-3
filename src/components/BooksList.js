@@ -1,6 +1,17 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteBook } from "../features/booksSlice";
+import { useState } from "react"
+
+const Modal = ({book, setModalShown}) => {
+  return (
+    <div style={{position: "fixed", height:"10rem", width: "10rem", background: "#fff", left:"20%", top: "20%", color:"black"}}>
+      {book.title}
+
+      <span onClick={() => setModalShown(false)} >X</span>
+    </div>
+  )
+}
 
 function BooksList() {
   const books = useSelector((state) => state.books);
@@ -9,6 +20,8 @@ function BooksList() {
   const handleDelete = (id) => {
     dispatch(deleteBook(id));
   };
+
+  const [modalShown, setModalShown] = useState(false)
 
   return (
     <div className="w-4/6">
@@ -24,14 +37,20 @@ function BooksList() {
       </header>
       <div className="grid gap-2 lg:grid-cols-4">
         {books.map((book) => (
+          <>
           <div
             className="w-full  rounder-md shadow-md lg:max-w-sm"
             key={book.id}
           >
             <img
               className="object-cover w-full h-48"
+<<<<<<< HEAD
               src="https://3.bp.blogspot.com/-B-fvBh56lpI/UHC5X70tjrI/AAAAAAAAXT0/ObVodIHL73Y/s1600/libros1.jpg"
               alt="imagen libros"
+=======
+              src={book.imageLink}
+              alt="libro"
+>>>>>>> 9d15b89f0b588a7a056ab7bdc7d590f33cb2b524
             />
             <div className="bg-slate-400 p-4  space-y-3.5">
               <h3 className="text-lg font-bold">{book.title}</h3>
@@ -52,11 +71,13 @@ function BooksList() {
                   Delete
                 </button>
               </div>
-              <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow">
+              <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow" onClick={() => setModalShown(!modalShown)}>
                 View more
               </button>
             </div>
           </div>
+          {modalShown && <Modal book={book} setModalShown={setModalShown} />}
+          </>          
         ))}
       </div>
     </div>

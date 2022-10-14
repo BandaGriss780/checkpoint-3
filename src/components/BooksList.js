@@ -1,17 +1,29 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteBook } from "../features/booksSlice";
-import { useState } from "react"
+import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Modal = ({book, setModalShown}) => {
+const Modal = ({ book, setModalShown }) => {
   return (
-    <div style={{position: "fixed", height:"10rem", width: "10rem", background: "#fff", left:"20%", top: "20%", color:"black"}}>
+    <div
+      style={{
+        position: "fixed",
+        height: "10rem",
+        width: "10rem",
+        background: "#fff",
+        left: "20%",
+        top: "20%",
+        color: "black",
+      }}
+    >
       {book.title}
 
-      <span onClick={() => setModalShown(false)} >X</span>
+      <span onClick={() => setModalShown(false)}>X</span>
     </div>
-  )
-}
+  );
+};
 
 function BooksList() {
   const books = useSelector((state) => state.books);
@@ -21,7 +33,24 @@ function BooksList() {
     dispatch(deleteBook(id));
   };
 
-  const [modalShown, setModalShown] = useState(false)
+  const notify = () =>
+    toast.warn("Successfully deleted book", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
+
+  function deleteWithToast() {
+    handleDelete();
+    notify();
+  }
+
+  const [modalShown, setModalShown] = useState(false);
 
   return (
     <div className="w-4/6">
@@ -38,41 +67,45 @@ function BooksList() {
       <div className="grid gap-2 lg:grid-cols-4">
         {books.map((book) => (
           <>
-          <div
-            className="w-full  rounder-md shadow-md lg:max-w-sm"
-            key={book.id}
-          >
-            <img
-              className="object-cover w-full h-48"
-              src={book.imageLink}
-              alt="libro"
-            />
-            <div className="bg-slate-400 p-4  space-y-3.5">
-              <h3 className="text-lg font-bold">{book.title}</h3>
+            <div
+              className="w-full  rounder-md shadow-md lg:max-w-sm"
+              key={book.id}
+            >
+              <img
+                className="object-cover w-full h-48"
+                src={book.imageLink}
+                alt="libro"
+              />
+              <div className="bg-slate-400 p-4  space-y-3.5">
+                <h3 className="text-lg font-bold">{book.title}</h3>
 
-              <p>Description: {book.description}</p>
-              <p>Author: {book.author}</p>
-              <div className="flex gap-x-2">
-                <Link
-                  to={`/edit-book/${book.id}`}
-                  className="bg-zinc-600 px-2 py-1 text-xs rounded-md self-center"
-                >
-                  Edit
-                </Link>
+                <p>Description: {book.description}</p>
+                <p>Author: {book.author}</p>
+                <div className="flex gap-x-2">
+                  <Link
+                    to={`/edit-book/${book.id}`}
+                    className="bg-zinc-600 px-2 py-1 text-xs rounded-md self-center"
+                  >
+                    Edit
+                  </Link>
+                  <button
+                    onClick={() => deleteWithToast(book.id)}
+                    className="bg-red-500 px-2 py-1 text-xs rounded-md"
+                  >
+                    Delete
+                  </button>
+                  <ToastContainer />
+                </div>
                 <button
-                  onClick={() => handleDelete(book.id)}
-                  className="bg-red-500 px-2 py-1 text-xs rounded-md"
+                  className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow"
+                  onClick={() => setModalShown(!modalShown)}
                 >
-                  Delete
+                  View more
                 </button>
               </div>
-              <button className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow" onClick={() => setModalShown(!modalShown)}>
-                View more
-              </button>
             </div>
-          </div>
-          {modalShown && <Modal book={book} setModalShown={setModalShown} />}
-          </>          
+            {modalShown && <Modal book={book} setModalShown={setModalShown} />}
+          </>
         ))}
       </div>
     </div>

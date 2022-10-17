@@ -58,12 +58,14 @@ function BooksList() {
                 src={book.imageLink}
                 alt="libro"
               />
-              <div className="bg-slate-400 p-4  space-y-3.5  h-96 ">
+              <div className="bg-slate-400   h-96 ">
+              
                 <h3 className="text-lg font-bold">{book.title}</h3>
 
                 <p>Description: {book.description}</p>
                 <p>Author: {book.author}</p>
-                <div className="flex gap-x-2 ">
+                <div className="mx-2">
+                <div className="flex gap-x-2 mb-4 ">
                   <Link
                     to={`/edit-book/${book.id}`}
                     className="bg-zinc-600 px-2 py-1 text-xs rounded-md self-center  "
@@ -84,6 +86,7 @@ function BooksList() {
                 >
                   View more
                 </Link>
+                </div>
               </div>
             </div>
           </>

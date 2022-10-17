@@ -36,7 +36,7 @@ function BookForm() {
       );
     }
 
-    navigate("/");
+    navigate("/BooksList");
   };
 
   useEffect(() => {
@@ -78,7 +78,7 @@ function BookForm() {
           placeholder="Write a description"
         />
       </label>
-      <button type="submit" className="bg-indigo-600 px-2 py-1">Submit</button>
+      <button type="submit" className="bg-indigo-600 px-4 py-1">Submit</button>
     </form>
   );
 }

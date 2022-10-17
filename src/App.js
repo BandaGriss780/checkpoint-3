@@ -21,7 +21,7 @@ function App() {
           <Route path="/viewmore/:id" element={<ViewMorePage />} />
           <Route path="/Logout" exact element={<LogoutComponent />} />
 
-          <Route path="/BooksList" element={<BooksList />} />
+          <Route path="/booksList" element={<BooksList />} />
           <Route path="/create-book" element={<BookForm />} />
           <Route path="/edit-book/:id" element={<BookForm />} />
         </Routes>

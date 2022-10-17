@@ -42,7 +42,7 @@ export const ViewMorePage = () => {
             
             <div className=" row d-flex justify-content-center align-items-center col-md-8">
               <button type="button" class="btn btn-primary btn-sm" >
-                <Link class="linkButton " to={`/BooksList`}>
+                <Link class="linkButton " to={`/booksList`}>
                   Back
                 </Link>
               </button>

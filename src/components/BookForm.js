@@ -36,7 +36,7 @@ function BookForm() {
       );
     }
 
-    navigate("/BooksList");
+    navigate("/booksList");
   };
 
   useEffect(() => {

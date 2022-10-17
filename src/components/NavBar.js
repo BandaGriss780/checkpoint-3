@@ -1,28 +1,34 @@
-import React from 'react';
-import { Navbar, Typography, Button } from "@material-tailwind/react";
-const NavBar = () => {
-    return (
-        <Navbar className="relative w-full flex flex-wrap items-center justify-between py-3 bg-gray-900 text-gray-200 shadow-lg navbar navbar-expand-lg navbar-light">
-        <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
-          <Typography
-            as="a"
-            href="#"
-            variant="small"
-            className="mr-4 cursor-pointer py-1.5 font-normal"
-          >
-            <span>Checkpoint three</span>
-          </Typography>
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-          <Button
-            variant="gradient"
-            size="md"
-            className="hidden lg:inline-block"
-          >
-            <span>Login</span>
-          </Button>
-        </div>
-      </Navbar>
-    );
-};
-
+function NavBar() {
+  return (
+    <div>
+      <>
+        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+          <Container>
+            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav className="links">
+                <Nav.Link as={Link} to="/Home">
+                  Home
+                </Nav.Link>
+                <Nav.Link as={Link} to="/Login">
+                  Login
+                </Nav.Link>
+                <Nav.Link as={Link} to="/Logout">
+                  Log out
+                </Nav.Link>
+                <Nav.Link as={Link} to="/BooksList">
+                  Booklist
+                </Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </>
+    </div>
+  );
+}
 export default NavBar;

@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <div>
         <footer>
-            {`Created by: Ian, Mati, Gise & Debo -
+            {`Created by: Ian, Mathi, Gise & Debo -
             Checkpoint 3 Avalith®${year}`}
         </footer>
         </div>

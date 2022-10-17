@@ -4,6 +4,7 @@ import BooksList from "./components/BooksList";
 import BookForm from "./components/BookForm";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
+import { ViewMorePage } from "./components/ViewMorePage";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div className="flex items-center justify-center">
           <Routes>
             <Route path="/" element={<BooksList />} />
+            <Route path="/viewmore/:id" element={<ViewMorePage />} />
             <Route path="/create-book" element={<BookForm />} />
             <Route path="/edit-book/:id" element={<BookForm />} />
           </Routes>

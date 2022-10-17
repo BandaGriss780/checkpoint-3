@@ -6,3 +6,8 @@
 body {
     background: rgb(82, 82, 91);
 }
+
+.maxWidth{
+    max-width: 900px;
+    min-width: 900px;
+  }

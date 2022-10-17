@@ -11,3 +11,23 @@ body {
     max-width: 900px;
     min-width: 900px;
   }
+
+  @layer components {
+    .buttonsGroup {
+      margin-top: 15px;
+      margin-left: 14px;
+    }
+  .desc{
+    max-width :
+       200px
+      
+  }
+  .content{
+    width: 220px;
+    height: 320px;
+  }
+  .description{
+    margin-left: 14px;
+    height: 200px; 
+  }
+  }

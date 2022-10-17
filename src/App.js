@@ -11,7 +11,7 @@ import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="bg-zinc-600  h-screen text-white">
+    <div className="bg-zinc-600  text-white">
       <NavBar />
       <div className="flex items-center justify-center">
         <Routes>

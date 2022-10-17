@@ -20,7 +20,7 @@ function NavBar() {
                 <Nav.Link as={Link} to="/Logout">
                   Log out
                 </Nav.Link>
-                <Nav.Link as={Link} to="/BooksList">
+                <Nav.Link as={Link} to="/booksList">
                   Booklist
                 </Nav.Link>
               </Nav>

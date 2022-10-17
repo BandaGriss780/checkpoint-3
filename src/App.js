@@ -17,9 +17,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/Login" exact element={<LoginComponent />} />
-
           <Route path="/Logout" exact element={<LogoutComponent />} />
-
           <Route path="/BooksList" element={<BooksList />} />
           <Route path="/create-book" element={<BookForm />} />
           <Route path="/edit-book/:id" element={<BookForm />} />

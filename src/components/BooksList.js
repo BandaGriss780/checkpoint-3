@@ -24,15 +24,16 @@ function BooksList() {
   const notify = (id) => {
     handleDelete(id);
     toast.warn("Successfully deleted book", {
-      position: "top-center",
-      autoClose: 3000,
+      position: "top-right",
+      autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: "light",
+      theme: "colored",
     });
+    
   };
 
   const deleteWithToast = (id) => {

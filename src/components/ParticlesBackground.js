@@ -25,7 +25,7 @@ function ParticlesBackground(props) {
               value: "#808B96",
             },
           },
-          fpsLimit: 60,
+          fpsLimit: 40,
           interactivity: {
             events: {
               onClick: {
@@ -41,7 +41,7 @@ function ParticlesBackground(props) {
             modes: {
               bubble: {
                 distance: 400,
-                duration: 2,
+                duration: 4,
                 opacity: 0.8,
                 size: 40,
               },
@@ -50,7 +50,7 @@ function ParticlesBackground(props) {
               },
               repulse: {
                 distance: 200,
-                duration: 0.4,
+                duration: 0.30,
               },
             },
           },

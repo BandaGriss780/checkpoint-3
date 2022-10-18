@@ -3,12 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { addBook, editBook } from "../features/booksSlice";
 import { v4 as uuid } from "uuid";
-
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function BookForm() {
   const [book, setBook] = useState({
     title: "",
     description: "",
-    author: ""
+    author: "",
   });
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -27,6 +29,7 @@ function BookForm() {
 
     if (params.id) {
       dispatch(editBook({ ...book, id: params.id }));
+      notifyEdit(params.id);
     } else {
       dispatch(
         addBook({
@@ -34,6 +37,7 @@ function BookForm() {
           id: uuid(),
         })
       );
+      notifyAdd(params.id);
     }
 
     navigate("/booksList");
@@ -44,6 +48,28 @@ function BookForm() {
       setBook(books.find((book) => book.id === params.id));
     }
   }, [params, books]);
+  const notifyEdit = (id) =>
+    toast.success("Correctly edited book", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
+  const notifyAdd = (id) =>
+    toast.success("Book added correctly", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
   return (
     <form onSubmit={handleSubmit} className="bg-slate-400 max-w-sm p-4 mt-4">
@@ -65,9 +91,8 @@ function BookForm() {
         value={book.author}
         className="w-full p-2 rounded-md bg-zinc-700 mb-2"
         placeholder="Write a auhtor"
-       
       />
-      <label >
+      <label>
         Description:
         <textarea
           type="text"
@@ -78,7 +103,9 @@ function BookForm() {
           placeholder="Write a description"
         />
       </label>
-      <button type="submit" className="bg-indigo-600 px-4 py-1">Submit</button>
+      <button type="submit" className="bg-indigo-600 px-4 py-1">
+        Submit
+      </button>
     </form>
   );
 }

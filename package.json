@@ -16,10 +16,13 @@
     "react-hook-form": "^7.37.0",
     "react-hot-toast": "^2.4.0",
     "react-loader-spinner": "^5.3.4",
+    "react-particles": "^2.3.3",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.1",
     "react-scripts": "^5.0.1",
     "react-toastify": "^9.0.8",
+    "solid-particles": "^2.3.3",
+    "tsparticles": "^2.3.4",
     "uuid": "^9.0.0",
     "web-vitals": "^2.1.4"
   },

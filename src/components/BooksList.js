@@ -2,8 +2,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { deleteBook } from "../features/booksSlice";
 import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import CardGroup from "react-bootstrap/CardGroup";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 function BooksList() {
   const books = useSelector((state) => state.books);
@@ -35,67 +43,86 @@ function BooksList() {
   const [modalShown, setModalShown] = useState(false);
 
   return (
-    <div className="w-4/6">
-      <header className="flex justify-between items-center py-4 space-y-3.5 my-2.5 ">
-        <h1>Books added ({books.length})</h1>
-
-        <Link
-          to="/create-book"
-          className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow "
-        >
-          Create Book
-        </Link>
-      </header>
-
-      <div className="grid gap-2 lg:grid-cols-4">
-        {books.map((book) => (
-          <>
-            <div
-              className="w-full  rounder-md shadow-md lg:max-w-sm"
-              key={book.id}
+    <Container>
+      <Row>
+        <Col sm={8}>
+          {" "}
+          <h1>Books added ({books.length})</h1>
+        </Col>
+        <Col sm={4}></Col>
+      </Row>
+      <Row>
+        <Col sm={10}> </Col>
+        <Col sm={2} className="mb-3 ">
+         
+          <Button>
+            <Link
+              variant="primary"
+              size="sm"
+              to="/create-book"
+              className="linkButton"
             >
-              <img
-                className="object-cover  w-62 h-[26.5rem]"
-                src={book.imageLink}
-                alt="libro"
-              />
-              <div className="content bg-slate-400 ">
-                <div className="description">
-                  <h3 className="text-lg font-bold">{book.title}</h3>
+              Create Book
+            </Link>
+          </Button>
+        </Col>
+      </Row>
 
-                  <p className="desc">Description: {book.description}</p>
-                  <p>Author: {book.author}</p>
-                </div>
+      <Row xs={1} md={3} className="g-8">
+        {books.map((book) => (
+          
+            <CardGroup>
+              <Card  border="dark" className="mt-2">
+                <Card.Img variant="top"  src={book.imageLink} />
+                <Card.Body >
+                  <Card.Title>{book.title}</Card.Title>
+                  <Card.Text>
+                    <p>Description: {book.description}</p>
+                    <p>Author: {book.author}</p>
+                  </Card.Text>
 
-                <div className="buttonsGroup">
-                  <div className="flex gap-x-2 mb-4 ">
+                  <ButtonToolbar aria-label="Toolbar with button groups">
+                    <ButtonGroup className="me-2" aria-label="First group">
+                      <Button>
+                        <Link
+                          variant="primary"
+                          size="sm"
+                          className="linkButton"
+                          to={`/edit-book/${book.id}`}
+                        >
+                          Edit
+                        </Link>
+                      </Button>
+                    </ButtonGroup>
+                    <ButtonGroup className="me-2" aria-label="Second group">
+                      <Button
+                        variant="danger"
+                        onClick={() => deleteWithToast(book.id)}
+                      >
+                        {" "}
+                        Delete
+                      </Button>
+                    </ButtonGroup>
+                  </ButtonToolbar>
+
+                  <ToastContainer />
+                  <Button className="mt-2">
                     <Link
-                      to={`/edit-book/${book.id}`}
-                      className="bg-zinc-600 px-2 py-1 text-sm text-white rounded-md self-center  "
+                      variant="primary"
+                      size="sm"
+                      to={`/viewmore/${book.id}`}
+                      className="linkButton"
                     >
-                      Edit
+                      View more
                     </Link>
-                    <button
-                      onClick={() => deleteWithToast(book.id)}
-                      className="bg-red-500 px-2 py-1 text-xs rounded-md "
-                    >
-                      Delete
-                    </button>
-                    <ToastContainer />
-                  </div>
-                  <Link
-                    to={`/viewmore/${book.id}`}
-                    className="px-4 py-2 text-sm text-blue-100 bg-blue-500 rounded shadow "
-                  >
-                    View more
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </>
+                  </Button>
+                </Card.Body>
+              </Card>
+            </CardGroup>
+          
         ))}
-      </div>
-    </div>
+      </Row>
+    </Container>
   );
 }
 

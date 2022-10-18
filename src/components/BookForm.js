@@ -72,14 +72,14 @@ function BookForm() {
     });
 
   return (
-    <form onSubmit={handleSubmit} className="bg-slate-400 max-w-sm p-4 mt-4">
+    <form onSubmit={handleSubmit} className=" grid grid-flow-row auto-rows-max  bg-slate-300 max-w-sm p-4 mt-4 rounded-md">
       <label className="block text-sm font-bold">Book:</label>
       <input
         type="text"
         name="title"
         onChange={handleChange}
         value={book.title}
-        className="w-full p-2 rounded-md bg-zinc-600 mb-2"
+        className="w-full p-2 rounded-md  bg-slate-400 mb-2"
         placeholder="Write a title"
         autoFocus
       />
@@ -89,7 +89,7 @@ function BookForm() {
         name="author"
         onChange={handleChange}
         value={book.author}
-        className="w-full p-2 rounded-md bg-zinc-700 mb-2"
+        className="w-full p-2 rounded-md bg-slate-400 mb-2"
         placeholder="Write a auhtor"
       />
       <label>
@@ -99,11 +99,11 @@ function BookForm() {
           name="description"
           onChange={handleChange}
           value={book.description}
-          className="w-full p-2 rounded-md bg-zinc-700 mb-2"
+          className="w-full p-2 rounded-md bg-slate-400 mb-2"
           placeholder="Write a description"
         />
       </label>
-      <button type="submit" className="bg-indigo-600 px-4 py-1">
+      <button type="submit" className="bg-indigo-700 px-4 py-1 rounded-md">
         Submit
       </button>
     </form>

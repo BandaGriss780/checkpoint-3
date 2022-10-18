@@ -1,7 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.maxWidth {
+  max-width: 900px;
+  min-width: 900px;
+}
+.card-img-top{
+  width: 200px;
+  
 }
 
 .particles-js {
@@ -11,64 +23,30 @@
   z-index: -1;
 }
 
-/* .contenedor {
-width: 90%;
-max-width: 1200px;
-  background-size: cover;
-  background-position:center;
-margin-left: auto; 
-margin-right: auto;
-  margin-top: 15px;
-  padding: 20px 30px;
-  position: relative;
-  z-index: 99;
-  opacity: .85;
-} */
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-/* .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-} */
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-footer {
-  position: fixed;
-  background-color: rgb(0, 0, 0);
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 5px;
+.title {
+  font-weight: 700;
   text-align: center;
-  font-family: "Alkalami", serif;
-  color: white;
+  font-size: 40px;
+  font-family: Hack, sans-serif;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  letter-spacing: 5px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  animation: shine 5s linear infinite;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+  100% {
+    background-position-x: 500%;
+  }
 }
 
 .container {
@@ -83,10 +61,39 @@ footer {
   color: black;
 }
 
+html {
+  width: 100%;
+  height: 100%;
+}
 body {
-  background: rgb(82, 82, 91);
+  padding-bottom: 5rem;
+  posiition: relative;
+  min-height: 100vh;
+}
+#root {
+  width: 100%;
+  height: 100%;
+}
+.App {
+  width: 100%;
+  height: 100%;
+}
+.logo {
+  width: 30%;
+  margin-left: 5vw;
 }
 
+footer {
+  position: fixed;
+  background-color: #263238;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px;
+  text-align: center;
+  font-family: "Alkalami", serif;
+  color: white;
+}
 .maxWidth {
   max-width: 900px;
   min-width: 900px;

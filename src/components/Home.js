@@ -6,21 +6,19 @@ import foto3 from "../Assets/Tres.png";
 function Home() {
   return (
     <div>
-      <Carousel>
-        <Carousel.Item interval={1000}>
+      <p className="title">Welcome to the book jungle</p>
+
+      <Carousel slide={false} className="mt-3">
+        <Carousel.Item>
           <img className="d-block w-100" src={foto1} alt="First slide" />
         </Carousel.Item>
-        <Carousel.Item interval={500}>
+        <Carousel.Item>
           <img className="d-block w-100" src={foto2} alt="Second slide" />
         </Carousel.Item>
         <Carousel.Item>
           <img className="d-block w-100" src={foto3} alt="Third slide" />
         </Carousel.Item>
       </Carousel>
-
-      <div className="Tit">
-        <h1 className="titulo">Welcome to the book jungle</h1>
-      </div>
     </div>
   );
 }

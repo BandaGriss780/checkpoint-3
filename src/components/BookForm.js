@@ -82,6 +82,9 @@ function BookForm() {
         className="w-full p-2 rounded-md  bg-slate-400 mb-2"
         placeholder="Write a title"
         autoFocus
+        required
+        minlength="10" 
+        maxlength="20"
       />
       <label className="block text-sm font-bold">Author:</label>
       <input
@@ -90,19 +93,23 @@ function BookForm() {
         onChange={handleChange}
         value={book.author}
         className="w-full p-2 rounded-md bg-slate-400 mb-2"
-        placeholder="Write a auhtor"
+        placeholder="Write an author"
+        required
+        minlength="10" 
+        maxlength="20"
       />
-      <label>
-        Description:
-        <textarea
+      <label className="block text-sm font-bold">Description:</label>
+  	  <textarea
           type="text"
           name="description"
           onChange={handleChange}
           value={book.description}
           className="w-full p-2 rounded-md bg-slate-400 mb-2"
           placeholder="Write a description"
+          required
+          minlength="50"
+          maxlength="150"
         />
-      </label>
       <button type="submit" className="bg-indigo-700 px-4 py-1 rounded-md">
         Submit
       </button>

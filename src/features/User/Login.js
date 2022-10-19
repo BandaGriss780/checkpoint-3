@@ -8,19 +8,19 @@ const LoginComponent = () => {
   const dispatch = useDispatch();
   const [user, setUser] = useState({
     email: "",
-    password: ""
+    password: "",
   });
 
   const inputHandle = (e) => {
     setUser(() => ({
       ...user,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
   const handleSubmit = (e) => {
     //e.preventDefault();
     dispatch(login(user));
-    alert ("LLEGO");
+    alert("LLEGO");
     // navigate("/logout");
   };
 
@@ -97,6 +97,15 @@ const LoginComponent = () => {
               className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Sign in
+            </button>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            >
+              Logout
             </button>
           </div>
         </form>

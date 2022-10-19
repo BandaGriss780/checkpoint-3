@@ -17,9 +17,6 @@ function NavBar() {
                 <Nav.Link as={Link} to="/Login">
                   Login
                 </Nav.Link>
-                <Nav.Link as={Link} to="/Logout">
-                  Log out
-                </Nav.Link>
                 <Nav.Link as={Link} to="/booksList">
                   Booklist
                 </Nav.Link>

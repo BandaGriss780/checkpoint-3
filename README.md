@@ -94,5 +94,9 @@ Clones a repository into a newly created directory, creates remote-tracking bran
 After the clone, a plain git fetch without arguments will update all the remote-tracking branches, and a git pull without arguments will in addition merge the remote master branch into the current master branch, if any (this is untrue when "--single-branch" is given; see below).
 
 This default configuration is achieved by creating references to the remote branch heads under refs/remotes/origin and by initializing remote.origin.url and remote.origin.fetch configuration variables.
+
+## Agile software development:
+
+:tada: https://library-app.atlassian.net/jira/software/projects/TUK/boards/1
   
   <h1> Happy Hacking! </h1>

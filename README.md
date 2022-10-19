@@ -34,6 +34,7 @@ When you’re ready to deploy to production, create a minified bundle with npm r
 
 ## 💾 Installed and used dependencies
 
+- `"@auth0/auth0-react"`
 - `"@material-tailwind/react": "^1.2.4"`
 - `"@reduxjs/toolkit": "^1.8.5"`
 - `"@testing-library/jest-dom": "^5.16.5"`
